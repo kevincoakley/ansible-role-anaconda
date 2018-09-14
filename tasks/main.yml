@@ -1,2 +1,31 @@
 ---
-# tasks file for ansible-role-anaconda
+- name: Install required packages
+  package: name={{ item }}
+  with_items:
+    - bzip2
+
+- name: Check if Anaconda is already installed
+  stat:
+    path: "{{ anaconda_install_path }}anaconda{{ anaconda_python_version }}"
+  register: check_anaconda_install_path
+
+- name: Download Anaconda
+  get_url:
+    url: "{{ anaconda_download_url }}"
+    dest: "/tmp/Anaconda{{ anaconda_python_version }}-{{ anaconda_version }}-Linux-x86_64.sh"
+    mode: 0755
+  when: check_anaconda_install_path.stat.exists == False
+
+- name: Install Anaconda
+  shell: "/tmp/Anaconda{{ anaconda_python_version }}-{{ anaconda_version }}-Linux-x86_64.sh -b -p {{ anaconda_install_path }}anaconda{{ anaconda_python_version }}"
+  args:
+    executable: /bin/bash
+  register: anaconda_install
+  when: check_anaconda_install_path.stat.exists == False
+
+- name: Add Anaconda to the system path in /etc/profile
+  lineinfile:
+    path: /etc/profile
+    regexp: ^export PATH=.*anaconda.*
+    line: "export PATH=\"{{ anaconda_install_path }}anaconda{{ anaconda_python_version }}/bin:$PATH\""
+    backup: yes
