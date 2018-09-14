@@ -17,7 +17,7 @@
     - docker-start
 
 
-- name: Test the Anaconda role for CentOS
+- name: Test the Anaconda role for CentOS and Ubuntu
   hosts: anaconda
   become: yes
   become_method: sudo
