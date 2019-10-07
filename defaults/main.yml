@@ -1,5 +1,5 @@
 ---
 anaconda_python_version: 3
-anaconda_version: 5.2.0
+anaconda_version: 2019.07
 anaconda_install_path: /opt/
 anaconda_download_url: "http://repo.continuum.io/archive/Anaconda{{ anaconda_python_version }}-{{ anaconda_version }}-Linux-x86_64.sh"
