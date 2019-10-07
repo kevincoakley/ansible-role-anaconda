@@ -3,7 +3,7 @@ ansible-role-anaconda
 
 [![Build Status](https://travis-ci.org/kevincoakley/ansible-role-anaconda.svg?branch=master)](https://travis-ci.org/kevincoakley/ansible-role-anaconda)
 
-Install Anaconda Python for all users - https://www.anaconda.com . Tested with Anaconda 5.2.0 on CentOS 7 and Ubuntu 18.04.
+Install Anaconda Python for all users - https://www.anaconda.com . Tested with Anaconda 2019.07 on CentOS 7 and Ubuntu 18.04.
 
 Requirements
 ------------
