@@ -1,9 +1,0 @@
----
-- name: Test that Anaconda python has been installed
-  shell: "{{ anaconda_install_path }}anaconda{{ anaconda_python_version }}/bin/python -V"
-  args:
-    executable: /bin/bash
-  register: python_version
-  changed_when: False
-  failed_when:
-    - '"Anaconda, Inc." not in python_version.stderr'
