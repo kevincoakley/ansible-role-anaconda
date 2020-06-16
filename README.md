@@ -1,9 +1,10 @@
 ansible-role-anaconda
 =====================
 
-[![Build Status](https://travis-ci.org/kevincoakley/ansible-role-anaconda.svg?branch=master)](https://travis-ci.org/kevincoakley/ansible-role-anaconda)
+![](https://github.com/kevincoakley/ansible-role-anaconda/workflows/Molecule%20Test/badge.svg)
 
-Install Anaconda Python for all users - https://www.anaconda.com . Tested with Anaconda 2019.07 on CentOS 7 and Ubuntu 18.04.
+Install Anaconda Python for all users - https://www.anaconda.com . Tested with Anaconda 2020.02 on CentOS 7, CentOS 8, 
+Ubuntu 18.04 and Ubuntu 20.04.
 
 Requirements
 ------------
