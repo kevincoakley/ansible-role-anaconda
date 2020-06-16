@@ -1,14 +1,11 @@
 ---
-- name: Converge
+- name: Verify
   hosts: all
   become: true
 
-  roles:
-    - ansible-role-anaconda
-
-  post_tasks:
+  tasks:
     - name: Test that Anaconda python has been installed
-      shell: "{{ anaconda_install_path }}anaconda{{ anaconda_python_version }}/bin/python -v -c 'quit();'"
+      shell: "/opt/anaconda3/bin/python -v -c 'quit();'"
       args:
         executable: /bin/bash
       register: python_version
