@@ -1,6 +1,7 @@
 ---
 galaxy_info:
   role_name: anaconda
+  namespace: kevincoakley
   author: Kevin Coakley
   description: Install Anaconda Python for all users (https://www.anaconda.com)
 
