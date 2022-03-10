@@ -5,9 +5,7 @@
 
   tasks:
     - name: Test that Anaconda python has been installed
-      shell: "/opt/anaconda3/bin/python -v -c 'quit();'"
-      args:
-        executable: /bin/bash
+      command: "/opt/anaconda3/bin/python -v -c 'quit();'"
       register: python_version
       changed_when: false
       failed_when:

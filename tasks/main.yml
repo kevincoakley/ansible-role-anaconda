@@ -12,14 +12,12 @@
 - name: Download Anaconda
   get_url:
     url: "{{ anaconda_download_url }}"
-    dest: "/tmp/Anaconda{{ anaconda_python_version }}-{{ anaconda_version }}-Linux-x86_64.sh"
+    dest: "/tmp/Anaconda{{ anaconda_python_version }}-{{ anaconda_version }}-Linux-{{ anaconda_architecture }}.sh"
     mode: 0755
   when: not check_anaconda_install_path.stat.exists
 
 - name: Install Anaconda
-  shell: "/tmp/Anaconda{{ anaconda_python_version }}-{{ anaconda_version }}-Linux-x86_64.sh -b -p {{ anaconda_install_path }}anaconda{{ anaconda_python_version }}"
-  args:
-    executable: /bin/bash
+  command: "/bin/bash /tmp/Anaconda{{ anaconda_python_version }}-{{ anaconda_version }}-Linux-{{ anaconda_architecture }}.sh -b -p {{ anaconda_install_path }}anaconda{{ anaconda_python_version }}"
   register: anaconda_install
   when: not check_anaconda_install_path.stat.exists
 
