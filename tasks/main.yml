@@ -12,7 +12,7 @@
 - name: Download Anaconda
   get_url:
     url: "{{ anaconda_download_url }}"
-    dest: "/tmp/Anaconda{{ anaconda_python_version }}-{{ anaconda_version }}-Linux-x86_64.sh"
+    dest: "/tmp/Anaconda{{ anaconda_python_version }}-{{ anaconda_version }}-Linux-{{ anaconda_architecture }}.sh"
     mode: 0755
   when: not check_anaconda_install_path.stat.exists
 

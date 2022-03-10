@@ -2,5 +2,6 @@
 # anaconda_python_version 2 is not supported by Anaconda after version 2019.10
 anaconda_python_version: 3
 anaconda_version: 2021.11
+anaconda_architecture: x86_64
 anaconda_install_path: /opt/
-anaconda_download_url: "http://repo.continuum.io/archive/Anaconda{{ anaconda_python_version }}-{{ anaconda_version }}-Linux-x86_64.sh"
+anaconda_download_url: "http://repo.continuum.io/archive/Anaconda{{ anaconda_python_version }}-{{ anaconda_version }}-Linux-{{ anaconda_architecture }}.sh"
