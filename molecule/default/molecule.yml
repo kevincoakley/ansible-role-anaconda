@@ -23,10 +23,6 @@ provisioner:
     vvv: false
   playbooks:
     converge: ${MOLECULE_PLAYBOOK:-converge.yml}
-  inventory:
-    host_vars:
-      instance:
-        zookeeper_id: 0
 scenario:
   name: default
 verifier:
